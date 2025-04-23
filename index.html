@@ -6,46 +6,69 @@
   <title>PGP Encrypt/Decrypt with Key in Message</title>
   <!-- OpenPGP.js -->
   <script src="https://unpkg.com/openpgp@6.1.0/dist/openpgp.min.js"></script>
-  <style>
+  <style >
     body {
-      display: flexbox;
+      margin: 0;
+      padding: 0;
       font-family: Arial, sans-serif;
+      display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
+      min-height: 100vh;
+      background-color: #f5f5f5;
+      text-align: center;
     }
-    h2 {
+
+    div {
+      width: 90%;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1, h2, h3 {
       margin-top: 20px;
     }
-    h3 {
-      margin-top: 10px;
-    }
+
     p#information {
-      margin-top: 20px;
+      margin-top: 10px;
       font-style: italic;
       color: #555;
     }
+
     textarea {
-      width: 98%;
+      width: 100%;
+      max-width: 100%;
       height: 100px;
-      margin-bottom: 10px;
       padding: 10px;
+      margin: 10px 0;
       border-radius: 5px;
       border: 1px solid #ccc;
       font-size: 14px;
+      box-sizing: border-box;
+      resize: vertical;
     }
+
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
     button {
+      padding: 10px 20px;
       background-color: #ffffff;
-      color: rgb(0, 0, 0);
+      border: 1px solid #ccc;
       border-radius: 5px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
+
     button:hover {
       background-color: #4875a5;
-    }
-    input[type="password"] {
-      margin-bottom: 10px;
+      color: white;
     }
   </style>
 </head>
