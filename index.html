@@ -6,26 +6,71 @@
   <title>PGP Encrypt/Decrypt with Key in Message</title>
   <!-- OpenPGP.js -->
   <script src="https://unpkg.com/openpgp@6.1.0/dist/openpgp.min.js"></script>
+  <style>
+    body {
+      display: flexbox;
+      font-family: Arial, sans-serif;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h2 {
+      margin-top: 20px;
+    }
+    h3 {
+      margin-top: 10px;
+    }
+    p#information {
+      margin-top: 20px;
+      font-style: italic;
+      color: #555;
+    }
+    textarea {
+      width: 98%;
+      height: 100px;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    button {
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #4875a5;
+    }
+    input[type="password"] {
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-  <h1>PGP Encrypt/Decrypt with Key in Message</h1>
-  
-  <h2>Encrypt a message</h2>
-  <textarea id="encrypt-message" placeholder="Enter the message to encrypt"></textarea><br>
-  <textarea id="public-key" placeholder="Enter the public key here"></textarea><br>
-  <button onclick="encryptMessage()">Encrypt</button>
-  <h3>Encrypted Message:</h3>
-  <textarea id="encrypted-message" placeholder="Encrypted message will appear here" readonly></textarea>
+  <div>
+    <h1>PGP Encrypt/Decrypt with Key in Message</h1>
+    <p id="information">No data is stored or uploaded to any server(s).</p>
 
-  <h2>Decrypt a message</h2>
-  <textarea id="decrypt-message" placeholder="Enter the message to decrypt (including the private key)"></textarea><br>
-  <textarea id="private-key" placeholder="Enter the private key here"></textarea><br>
-  <input type="password" id="private-key-passphrase" placeholder="Enter passphrase">
-  <button onclick="decryptMessage()">Decrypt</button>
-  <h3>Decrypted Message:</h3>
-  <textarea id="decrypted-message" placeholder="Decrypted message will appear here" readonly></textarea>
+    <h2>Encrypt a message</h2>
+    <textarea id="encrypt-message" placeholder="Enter the message to encrypt"></textarea><br>
+    <textarea id="public-key" placeholder="Enter the public key here"></textarea><br>
+    <button onclick="encryptMessage()">Encrypt</button>
+    <h3>Encrypted Message:</h3>
+    <textarea id="encrypted-message" placeholder="Encrypted message will appear here" readonly></textarea>
 
-  <!-- app.js -->
-  <script src="app.js"></script>
+    <h2>Decrypt a message</h2>
+    <textarea id="decrypt-message" placeholder="Enter the message to decrypt"></textarea><br>
+    <textarea id="private-key" placeholder="Enter the private key here"></textarea><br>
+    <input type="password" id="private-key-passphrase" placeholder="Enter passphrase"><br>
+    <button onclick="decryptMessage()">Decrypt</button>
+    <h3>Decrypted Message:</h3>
+    <textarea id="decrypted-message" placeholder="Decrypted message will appear here" readonly></textarea><br>
+
+    <!-- app.js -->
+    <script src="app.js"></script>
+  </div>
 </body>
 </html>
